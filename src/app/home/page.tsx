@@ -6,14 +6,16 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 const schema = yup
   .object({
-    firstName: yup.string().required().min(10).email(),
-    age: yup.number().positive().integer().required(),
+    valueForm: yup.object({
+      firstName: yup.string().required("Đéo dc bỏ"),
+      age: yup.number().positive().integer().required(),
+    }),
   })
   .required();
 
 const defaultValueForm = {
   valueForm: {
-    firstName: "Nguyễn Văn A",
+    firstName: "Nguyễn Văn A22",
     age: 30,
   },
 };
@@ -31,11 +33,11 @@ const Page333 = () => {
   return (
     <div>
       <form>
-        <input {...register("firstName")} />
-        <p>{errors.firstName?.message}</p>
+        <input {...register("valueForm.firstName")} />
+        {/* <p>{errors.valueForm.firstName?.message}</p> */}
 
-        <input {...register("age")} />
-        <p>{errors.age?.message}</p>
+        <input {...register("valueForm.age")} />
+        {/* <p>{errors.valueFormage?.message}</p> */}
 
         <button onClick={handleSubmit(onSubmit)}>Submit22</button>
       </form>
