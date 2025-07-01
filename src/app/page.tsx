@@ -1,38 +1,13 @@
-"use client";
-import { Suspense, useEffect, useState } from "react";
+import FormRegister from './form/page';
 
 const Home = () => {
-  const [list, setList] = useState<{ id: string; title: string }[]>([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch("https://fakestoreapi.com/products")
-        .then((res) => res.json())
-        .then((json) => json);
-      const posts = await data;
-      // console.log("posttttt", posts);
-      setList(posts);
-    };
-    fetchData();
-  }, []);
+  // const [show, setShow] = useState(false);
 
-  console.log("list", list);
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div>
-        Home
-        <div>
-          {list?.length > 0 ? (
-            <ul>
-              {list
-                ? list.map((post) => <li key={post.id}>{post.title}</li>)
-                : "Loanding"}
-            </ul>
-          ) : (
-            "Loadin 123"
-          )}
-        </div>
-      </div>
-    </Suspense>
+    <>
+      <h1 className="font-extrabold text-amber-300">List products</h1>
+      <FormRegister />
+    </>
   );
 };
 
