@@ -11,8 +11,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <div className="px-20">
+      <h2 className="mt-2 rounded-2xl border-2 border-solid border-amber-950 bg-amber-400 text-center text-8xl font-semibold">
+        layout form
+      </h2>
+      {children}
+    </div>
   );
 }

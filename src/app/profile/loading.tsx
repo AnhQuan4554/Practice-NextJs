@@ -1,4 +1,4 @@
 export default function Loading() {
   // Or a custom loading skeleton component
-  return <p>Loading...3333#######</p>;
+  return <p>Loading...PROFILE---</p>;
 }
