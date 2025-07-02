@@ -3,5 +3,11 @@ export default function LoginLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section>{children}</section>;
+  return (
+    <section>
+      <h1>Header</h1>
+      {children}
+      <h1>Footer</h1>
+    </section>
+  );
 }
